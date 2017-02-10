@@ -1,6 +1,6 @@
 # 使用`CSS`
 
- `<style type="text/css"`
+ `<style type="text/css">`
 
  `<link href="" type="text/css rel="stylesheet />`
 
