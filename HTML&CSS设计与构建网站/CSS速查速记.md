@@ -48,7 +48,7 @@
 
  `opacity：y`透明度
 
-`rgba(x,x,x,y)`透明度为`y%`
+`rgba(x,x,x,y)`透明度为`y%(0-1.0)`
 
 - `hsl(色调，饱和度，明度)`
 
@@ -71,7 +71,7 @@
 
     ```css
     @font-face{
-    font-family:  xxx;
+    font-family:  'xxx';
     src: url('');
     }
     ```
@@ -100,19 +100,22 @@
 
   - 文本缩进`text-index`
 
-  - 首字母`:first-letter`
-
-  - 首行文本`:first-line`
 
 投影`text-shadow: x1px x2px x3px #0x0x0x`
 
--  `x1`阴影向左或右延伸距离
+-  `x1`阴影向左或右延伸距离(左+右-)
 
 -  `x2`阴影向上或下延伸距离
 
 -  `x3`可选，模糊程度
 
 -  `#0x0x0x`投影颜色值
+
+首字母和首行文本
+
+- `:first-line`
+
+- `:first-letter`
 
 链接样式
 

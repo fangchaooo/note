@@ -1,7 +1,7 @@
 # 总结
 - 块级元素
 
- `<h> <p> <ul> <li>`
+  `<h> <p> <ul> <li>`
 - 内联元素
 
   `<a> <b> <em> <img>`
@@ -33,7 +33,7 @@
 
 `<abbr title="">`缩写词或首字母缩写词
 
-`<cite>`引用作品，在HTML5不可以用在人名
+`<cite>`引用作品，在HTML5不可以用在人名，浏览器中会显示为斜体。
 
 `<dfn>`新术语的定义
 
@@ -69,12 +69,16 @@
 
 `<a href="#id_name">`链接到当前页面的特定位置
 
+`<a href="../index.html>"`父文件夹链接
+
+`<a href="../../index.html>"`祖父文件夹链接
+
 ## 图像
 `<img src="URL" alt="" title="" width="" height=""/>`
 
  照片最好保存为`JPEG`格式；使用单色的插图或徽标应保存为`GIF`格式
 
-块级元素`h``p`都是另起一行的。
+块级元素`h p`都是另起一行的。
 
 `HTML5`中对图片使用
 - `<figure>`包含图像以及图像的说明
@@ -154,7 +158,7 @@
 ```html
 <button><img src="" alt="aa" width="" height="">xx</button>
 <input type="hidden" name="" value="" />
-    ```
+```
 
 
 `<label for="">`标签表单控件
@@ -166,3 +170,18 @@
 - `<input type="email" name="" />`电子邮件
 -  `<input type="url" name="" />`URL
 - `<input type="search" name="" placeholder="xxx" />`搜索输入控件
+
+
+## `HTML5`布局
+
+页眉页脚`<header> <footer>`
+
+导航`<nav>`
+
+文章`<article>`
+
+附属信息`<aside>`
+
+部分`<section>`
+
+标题组`<hgroup>`
