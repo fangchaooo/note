@@ -27,6 +27,14 @@
 - `childNodes[0]=firstChild`
 - `childNodes[node.childNodes.length-1]=lastChild`
 
+## 节点操作
+
+`createElement()`创建新的元素节点
+
+`createTextNode()`创建文本节点
+
+`appendChild()` 添加现有节点的一个子节点 
+
 ## 元素属性
 
 `nodeType`
@@ -34,7 +42,11 @@
 - 属性节点的属性为2
 - 文本节点的属性为3
 
-`nodeValue`得到或设置文本节点的值
+`nodeValue`得到或设置节点的文本值
+
+`nodeName`获取当前文本节点
+
+
 ## 获取和设置属性
 `getAttribute`
 
@@ -64,3 +76,9 @@ function addLoadEvent(func){
   }
 }
 ```
+
+
+## 动态创建标记
+`document.write()`把字符串插入到文档中。**必须在`body`标签中使用`script`才能调用**
+
+`innerHTML`读、写给定元素的`HTML`内容。
