@@ -39,7 +39,7 @@ If the implementation is easy to explain, it may be a good idea.
 
 Namespaces are one honking great idea -- let's do more of those!
 ```
-### 变量和简单数据类型
+## 变量和简单数据类型
 
 变量
 - 变量名只能包含字母、数字和下划线
@@ -48,23 +48,63 @@ Namespaces are one honking great idea -- let's do more of those!
 
 
 字符串：用`''`或者`""`都可以包含字符串。对字符串中单词有常见的几种方法：
-
 - `.title()` 以首字母大写显示每个单词
+
 - `.upper()` 字符串全为大写
+
 - `.lower()` 字符串全为小写
+
+- `.capitalize()` 字符串首字母大写
+
+- `.swapcase()`字母大小写转换
+
 - `+` 合并字符串
+
 - `\t`和`\n`制造空白
+
 - `.strip()`删除所有空白（删除的空白并没有保存到原字符串，下同）
+
 - `.rstrip()`删除尾部空白
+
 - `.lstrip()`删除首部空白
+
+- `三重引号`在三重引号内字符串会把转义、制表符、换行都认定为字符串的一部分
+
+- `in` `not in`
+
+- `isX`
+  - `.isupper()` `.islower()`
+  - `.isalpha()`如果字符串只包含字母，而且非空
+  - `.isalnum()`如果字符串只包含字母和数字，并且非空
+  - `.isdecimal()`如果字符串只包含数字字符，并且非空
+  - `.isspace()`如果字符串只包含空格、制表符和换行，并且非空
+  - `.istitle()`
+  - `.startswith()` `.endswith()`
+
+- `.find()`
+
+- `.count()`
+
+- `.split()` 分割
+
+- `''.join()` 合并
+
+数字
+- `0b/0B`二进制
+
+- `0o/0O`八进制
+
+- `0x/0X`十六进制
 
 浮点数（遵循`IEEE754`标准）
 
-`str()`进行类型转换
+`int() float() str()`进行类型转换
+
+`None`----`NoneType`
 
 `#`注释
 
-### 列表
+## 列表(引用操作)
 
 列表是由一系列按特定顺序排列的元素组成的**值**。
 
@@ -73,10 +113,13 @@ Namespaces are one honking great idea -- let's do more of those!
 列表基础操作
 - `+`列表连接
 
+- `.index()`列表索引
+
 - 列表添加元素
 
   - `.append()`列表末尾添加元素
   - `.insert(index, obj)`特定位置添加元素
+
 
 - 列表删除元素
 
@@ -84,8 +127,13 @@ Namespaces are one honking great idea -- let's do more of those!
   - `del`删除元素，需指定元素索引
   - `.pop(boj=list[-1])`
 
+
   值删除
   - `.remove()`
+
+  - 列表元素复制
+   - `copy.copy()`
+   - `copy.deepcopy()`
 
 - 排序
   - `.sort()`对列表进行永久性排序
@@ -93,6 +141,7 @@ Namespaces are one honking great idea -- let's do more of those!
     `.sort(reverse=True)`逆序排序
   - `sorted()`不影响原始排列顺序的
 - 列表反转`.reverse()`
+
 
 遍历`for x in list`
 
@@ -108,6 +157,16 @@ for x in range(1,10):
 result = [x*2 for x in range(1,10)]
 ```
 切片
+
+`[:]`提取从开头到结尾的整个字符串
+
+`[start:]`从start提取到结尾
+
+`[:end]`从开头提取到结尾-1
+
+`[start:end]`从`start`提取到`end-1`
+
+`[start:end:step]`从`start`提取到`end-1`，每`step`个字符提取一个
 ```python
 >>> spam = ['cat', 'bat', 'rat', 'elephant']
 >>> spam[0:3]  #从索引0开始到索引2，不包含3，共3个元素
@@ -127,7 +186,7 @@ result = [x*2 for x in range(1,10)]
 
 修改元组只能重新赋值
 
-### 流程
+## 流程
 
 `Boolean`------`True` `False`
 
@@ -141,13 +200,14 @@ result = [x*2 for x in range(1,10)]
 
 `for in`
 
-### 字典
+## 字典
 
 `d = {key1: value1, key2: value2}`
 
 字典是**不排序**的
 
 对字典的基本操作
+
 ```python
 #访问字典中的值
 print(d[key1]） #value1
@@ -164,6 +224,7 @@ d['like'] = 'dog'
 #删除键-值对
 del d['like']
 ```
+
 字典的遍历
 
 ```python
@@ -203,16 +264,32 @@ like cat
 
 `.get(s1, s2)`
 - `s1`要取得的值得键
+
 - `s2`如果键不存在返回的备用值
 
 `.setdefault(x1, x2)`
 - `x1`要检查的键
+
 - `x2`如果该键不存在时要设置的值（如果该键确实存在，方法会返回键的值）
+
+
+
 
 ## 函数
 
-`def fun_name(参数...)`
+```python
+def fun_name(参数...):
+  return #如果函数没有return，python会自动在函数末尾加 return None
+```
 
-关键字实参
+**关键字实参**
 
-`def function_name(para)`
+`function_name(para = 'xx')`指定函数参数的值，直接在实参中将名称和值关联起来
+
+**默认值**
+
+在使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。
+
+**让实参变为可选**
+
+`def get_formatted_name(first_name, last_name, middle_name='')`-----空字符串为`False`，但如果调用过中提供了`middle_name`，那么它将为`True`。
