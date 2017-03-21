@@ -1,7 +1,7 @@
 #  复习数组最基本使用
 
 ```java
-//注释就不写了 想象你的英语
+//注释就不写了 相信你的英语
     public static int findMaxNum(int []a){
         int max = a[0];
         for (int i =0;i<a.length;i++){
@@ -35,7 +35,7 @@
 
 # **二分查找**又称折半查找
 
-![二分查找](C:\Users\fc\Documents\GitHub\note\室友带你学Java\day1\捕获.PNG)
+![二分查找](捕获.PNG)
 
 
 算法实现：
