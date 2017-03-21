@@ -60,7 +60,7 @@ public class Fibonacci {
 - 空间复杂度	О(n) total, O(1) auxiliary
 
 
-![Select_sort](C:\Users\fc\Documents\GitHub\note\室友带你学Java\day2\Selection-Sort-Animation.gif)
+![Select_sort](https://github.com/fangchaooo/note/blob/master/%E5%AE%A4%E5%8F%8B%E5%B8%A6%E4%BD%A0%E5%AD%A6Java/day2/Selection-Sort-Animation.gif)
 
 
 
