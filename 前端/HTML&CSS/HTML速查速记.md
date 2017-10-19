@@ -6,17 +6,32 @@
 
   `<a> <b> <em> <img>`
 
-- 将文本和元素集中在一个快级元素中
+- 将文本和元素集中在一个快级元素中，在块级元素没有语义标签时使用
   `<div>`
 
-- 将文本和元素集中在一个内联元素中
+- 将文本和元素集中在一个内联元素中，在行内元素没有语义标签时使用
   `<span>`
 
+
+
+
+
 ## 文本
-`<b>`
+
+`<b>`        粗体
+
+`<i>`       斜体
+
 `<strong>`粗体
 
 `<em>`斜体
+
+| Tag      | Type     | Description                              |
+| -------- | -------- | ---------------------------------------- |
+| <b>      | Style    | Makes text bold                          |
+| <i>      | Style    | Makes text italics                       |
+| <em>     | Semantic | Emphasizes textText is italics by default in a browser |
+| <strong> | Semantic | Important textText is bold by default in a browser |
 
 `<sup>`上标
 
@@ -45,6 +60,10 @@
 
 `<s>`表示不准确或不相关但是不应当删除的内容，显示为从中间穿过的线条
 
+
+
+
+
 ## 列表
 
 `<ul>`有序
@@ -58,6 +77,10 @@
   <dd>定义</dd>
 </dl>
 ```
+
+
+
+
 
 ## 链接
 
@@ -73,7 +96,12 @@
 
 `<a href="../../index.html>"`祖父文件夹链接
 
+
+
+
+
 ## 图像
+
 `<img src="URL" alt="" title="" width="" height=""/>`
 
  照片最好保存为`JPEG`格式；使用单色的插图或徽标应保存为`GIF`格式
@@ -84,8 +112,15 @@
 - `<figure>`包含图像以及图像的说明
 - `<figcaption>`给图像添加说明
 
+
+
+
+
 ## 表格
+
 `<table>`
+
+`<caption>`表格标题，居中显示
 
 `<tr>`table row
 
@@ -98,6 +133,13 @@
  - `scope="col"`列标题
 
 `<thead><tbody><tfoot>`用于长表格
+
+
+
+
+
+
+
 ## 表单
 
 `<form action="服务器URL" method="">`表单结构
@@ -168,20 +210,61 @@
 `HTML5`表单
 - `<input type="data" name=""/>`日期控件
 - `<input type="email" name="" />`电子邮件
--  `<input type="url" name="" />`URL
+- `<input type="url" name="" />`URL
 - `<input type="search" name="" placeholder="xxx" />`搜索输入控件
 
 
-## `HTML5`布局
 
-页眉页脚`<header> <footer>`
 
-导航`<nav>`
 
-文章`<article>`
 
-附属信息`<aside>`
+## HTML5布局
 
-部分`<section>`
+ 标记定义一个页面或者区域的头部`<header>`
 
-标题组`<hgroup>`
+标记一个页面的底部`<footer>`
+
+标记定义导航链接`<nav>`
+
+标记定义一篇文章`<article>`
+
+标记定义页面内容部分的侧边栏`<aside>`
+
+标记定义一个区域`<section>`
+
+标记定义文件中一个区块的相关信息`<hgroup>`
+
+定义一个对话框`<dialog>`
+
+定义一组媒体内容以及他们的标题`<figure>`
+
+标签定义`figure`元素的标题`<figcaption>`
+
+提供给用户显示或隐藏的消息，默认显示一些，其余隐藏，可以扩展到查看`<details>`
+
+```html
+<details>
+	<summary>Cast Members</summary>
+	<p>George Washington as Algernon Moncrieff</p>
+<p>Ronald Reagan as John Worthing</p>
+</details>
+```
+
+高亮部分`<mark>`
+
+##  HTML5多媒体标签
+
+`<video>`     标记定义一个视频
+
+`<audio>`     标记定义音频内容
+
+`<source>`   标记定义媒体资源
+
+`<canvas>`     标记定义图片
+
+
+
+
+
+## HTML5 重定义标签
+

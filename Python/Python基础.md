@@ -1,6 +1,15 @@
-# Python
+---
+title: Python基础
+date: 2017-05-16 20:30:11
+categories: Python
+tags: [Python, 基础语法]
+---
 
-```Python
+
+
+## Python 之美
+
+```markdown
 Beautiful is better than ugly.
 
 Explicit is better than implicit.
@@ -39,15 +48,30 @@ If the implementation is easy to explain, it may be a good idea.
 
 Namespaces are one honking great idea -- let's do more of those!
 ```
+
+
+
+
 ## 变量和简单数据类型
 
-变量
+#### 输入输出
+
+```python
+#输出
+print("Hello, World!")
+#输入
+text = input("Please input something")
+```
+
+#### 变量
+
 - 变量名只能包含字母、数字和下划线
 - 变量名不能包含空格
 - 不能将`Python`关键字当做变量名
 
 
-字符串：用`''`或者`""`都可以包含字符串。对字符串中单词有常见的几种方法：
+#### 字符串
+用`''`或者`""`都可以包含字符串。对字符串中单词有常见的几种方法：
 - `.title()` 以首字母大写显示每个单词
 
 - `.upper()` 字符串全为大写
@@ -89,20 +113,26 @@ Namespaces are one honking great idea -- let's do more of those!
 
 - `''.join()` 合并
 
-数字
+#### 数字
 - `0b/0B`二进制
 
 - `0o/0O`八进制
 
 - `0x/0X`十六进制
 
-浮点数（遵循`IEEE754`标准）
+#### 浮点数（遵循`IEEE754`标准）
 
 `int() float() str()`进行类型转换
 
 `None`----`NoneType`
 
-`#`注释
+#### 注释
+
+`python`中使用`#`来表示注释
+
+
+
+
 
 ## 列表(引用操作)
 
@@ -110,7 +140,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 列表用下标取值。（从`0`开始，可取负值，从倒数开始`-1,-2`）
 
-列表基础操作
+#### 列表基础操作
 - `+`列表连接
 
 - `.index()`列表索引
@@ -123,40 +153,44 @@ Namespaces are one honking great idea -- let's do more of those!
 
 - 列表删除元素
 
-  索引删除
-  - `del`删除元素，需指定元素索引
-  - `.pop(boj=list[-1])`
+  - 索引删除
+    - `del list[index]`删除元素，需指定元素索引，永久删除
+    - `.pop(boj=list[-1])`默认弹出最后一个元素，也可弹出指定索引元素
+  - 值删除
+    - `.remove()`
 
+- 列表元素复制
 
-  值删除
-  - `.remove()`
-
-  - 列表元素复制
-   - `copy.copy()`
-   - `copy.deepcopy()`
+  - `import copy      copy.copy() 浅拷贝 只拷贝父对象，不会拷贝对象的内部的子对象。  `
+  - `import copy     copy.deepcopy() 深拷贝 拷贝对象及其子对象 `
 
 - 排序
   - `.sort()`对列表进行永久性排序
 
     `.sort(reverse=True)`逆序排序
   - `sorted()`不影响原始排列顺序的
-- 列表反转`.reverse()`
 
+- 列表反转`.reverse()`永久反转,反转的是**列表元素的排列顺序**
 
-遍历`for x in list`
+#### 遍历
 
-创建数值列表`range(start, end, scan)`
+`for x in list`
 
-列表解析
+#### 创建数值列表
+`range(start, end, scan)`输出数值为`[start, start+1,...,end-1]`
+
+#### 列表解析
+
 >列表解析式是将一个列表（实际上适用于任何可迭代对象（iterable））转换成另一个列表的工具。在转换过程中，可以指定元素必须符合一定的条件，才能添加至新的列表中，这样每个元素都可以按需要进行转换。
 
 ```python
+result = []
 for x in range(1,10):
   result = x*2
 #列表解析式  
 result = [x*2 for x in range(1,10)]
 ```
-切片
+#### 切片
 
 `[:]`提取从开头到结尾的整个字符串
 
@@ -182,15 +216,21 @@ result = [x*2 for x in range(1,10)]
 >>> spam[:] #列表复制
 ['cat', 'bat', 'rat', 'elephant']
 ```
-**元组** -----特殊的列表（<span style="border-bottom:3px bolid #0F0">不可变列表</span>）
+#### 元组
+
+特殊的列表（不可变列表）
 
 修改元组只能重新赋值
 
+
+
+
+
 ## 流程
 
-`Boolean`------`True` `False`
+`True` `False`
 
-布尔操作符-------`and` `or` `not`
+`and` `or` `not` `in` `==`
 
 `if - else`
 
@@ -200,13 +240,17 @@ result = [x*2 for x in range(1,10)]
 
 `for in`
 
+
+
+
+
 ## 字典
 
 `d = {key1: value1, key2: value2}`
 
 字典是**不排序**的
 
-对字典的基本操作
+#### 对字典的基本操作
 
 ```python
 #访问字典中的值
@@ -225,7 +269,7 @@ d['like'] = 'dog'
 del d['like']
 ```
 
-字典的遍历
+#### 字典的遍历
 
 ```python
 
@@ -282,14 +326,144 @@ def fun_name(参数...):
   return #如果函数没有return，python会自动在函数末尾加 return None
 ```
 
-**关键字实参**
+####  参数传递
 
-`function_name(para = 'xx')`指定函数参数的值，直接在实参中将名称和值关联起来
+-  关键字实参
 
-**默认值**
+```python
+def fun1(para1, para2):
+	...
+    
+fun1(para1 = 'xx', para2 = 'xx')
+fun1(para2 = 'xx', para1 = 'xx')
+```
+
+指定函数参数的值，直接在实参中将名称和值关联起来
+
+- 默认值
+
+```python
+def fun2(para1, para2 = 'xx'):
+	...
+    
+fun2(x1,)
+```
 
 在使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。
 
-**让实参变为可选**
+#### 让实参变为可选
 
-`def get_formatted_name(first_name, last_name, middle_name='')`-----空字符串为`False`，但如果调用过中提供了`middle_name`，那么它将为`True`。
+```python
+def get_formatted_name(first_name, last_name, middle_name=''):
+    ...
+```
+
+空字符串为`False`，但如果调用过中提供了`middle_name`，那么它将为`True`。
+
+#### 禁止函数修改列表
+
+`function_name(list_name[:])`
+
+#### 传递任意数量的实参
+
+- 使用`*para_name`作为形参接受任意数量实参
+
+```python
+>>> def fun1(*names):
+	print(names)
+
+	
+>>> fun1("fc")
+('fc',)
+>>> fun1("aa","bb","cc")
+('aa', 'bb', 'cc')
+```
+
+- 使用任意数量的关键字实参
+
+```python
+>>> def build_profile(first, last, **user_info):
+	profile = {}
+	profile['first_name'] = first
+	profile['last_name'] = last
+	for key, value in user_info.items():
+		profile[key] = value
+	return profile
+
+>>> user_profile = build_profile('albert', 'einstein',
+			     location='preiceton',
+			     field='physics')
+>>> print(user_profile)
+{'first_name': 'albert', 'location': 'preiceton', 'field': 'physics', 'last_name': 'einstein'}
+```
+
+
+
+
+
+##  模块
+
+导入整个模块：
+
+```python
+import module_name
+
+modul_name.function_name()
+```
+
+导入特定函数：
+
+```python
+from module_name import function_name(,function_name2,...)
+
+function_name()
+```
+用`as`指定别名
+
+```python
+from module_name import function_name(,function_name2,...) as fn(,fn1,...)
+
+fn()
+```
+用`as`给模块指定别名
+
+```python
+import module_name as mn
+
+mn.function_name()
+```
+
+导入模块中所有函数
+
+```python
+from module_name import *
+
+Every_function()
+```
+导入类
+
+- 导入单个类
+
+  ```python
+  from pyfile_name import class_name
+  ```
+
+- 从一个模块中导入多个类
+
+  ```python
+  from pyfile_name import class_name1, class_name2
+  ```
+
+- 导入整个模块
+
+  ```python
+  import pyfile_name
+  ```
+
+- 导入模块中的所有类
+
+  ```python
+  import module_name import *
+  ```
+
+  ​

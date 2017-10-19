@@ -4,6 +4,10 @@
 
  `<link href="" type="text/css rel="stylesheet />`
 
+
+
+
+
 # `CSS`选择器
 
  `* {}` 通用选择器
@@ -23,6 +27,10 @@
  `h1+p {}`相邻兄弟选择器
 
  `h1~p {}` 普通兄弟选择器
+
+
+
+
 
 # `CSS`特性选择器
 
@@ -52,10 +60,20 @@
 
 
 
+
+
+
 # `CSS`规则
 
+- 行内>内部>外部
 
- 就近原则
+  > link链入外部样式和style内部样式优先级，取决于先后顺序。
+
+- 样式表中优先级
+
+   > ID选择器>class选择器>标签选择器>通配符
+
+就近原则
 
  具体性原则
 
@@ -67,7 +85,11 @@
 
   - 可以从父元素继承大多数属性，用`inherit`来强制继承父元素属性
 
-  --------------------------------------------------------------------------------
+
+
+
+
+
 
 # 颜色
 
@@ -88,13 +110,76 @@
   - 明度：百分数（0黑色 50正常 100白色）
   - 透明度：0-1.0
 
+
+
+
+
+
+# 背景
+
+背景包括边框
+
+`background-color`
+
+
+
+`background-image`
+
+默认的，背景图像位于元素的左上角，并在水平和垂直方向上重复。
+
+- `background-repeat: repeat|no-repeat|repeat-x|repeat-y`  
+
+
+
+`background-attachment`背景图片显示方式
+
+- `scroll`随滚动条滚动
+- `fixed`一直显示，不动
+
+
+
+`background-position`
+
+`background`
+
+
+
+
+
+
+
+
+
+
+
 # 文本
 
- 字体
+- 字体
 
-  - `font-family`
+  `font-family`
 
-  - `font-size`
+- 文字大小
+
+  `font-size`（绝对单位|相对单位）
+
+  **绝对单位**
+
+|   属性   |       说明       |
+| :----: | :------------: |
+|   in   | 1 in = 2.45cm  |
+|   cm   | 1 cm = 0.394in |
+|   mm   |                |
+|   pt   |  72 pt = 1in   |
+|   pc   |   1pc = 12pt   |
+| small  |      13px      |
+| medium |      16px      |
+| large  |      19px      |
+
+​	**相对单位**
+
+​	`px`受显示器分辨率影响
+
+​	`em/%`针对父元素进行大小设计
 
   - 选用更多字体
 
@@ -105,9 +190,18 @@
     }
     ```
 
-  - `font-weight:bold/normal`粗体
+- 文字颜色
 
-  - `font-style:normal/italic/oblique`斜体
+
+  `font-color`
+
+- 文字粗细
+
+  `font-weight:bold/normal`粗体
+
+- 文字样式
+
+  `font-style:normal/italic/oblique`斜体/倾斜
 
   - 大写和小写
 
@@ -125,40 +219,47 @@
 
   - 对齐方式
     - `text-align:left/right/center/justify`justify表明文本两端对齐，要在宽度上占满容器。
-    - `vertical-align`垂直对齐
+
+      > text-align 只对块级元素起作用
+
+    - `vertical-align：baseline|sub|super|top|text-top|middle|bottom|text-bottom `垂直对齐
+
+    - 单行文字垂直居中，将`line-height`值和高度设置为相同
 
   - 文本缩进`text-index`
 
+- 投影`text-shadow: x1px x2px x3px #0x0x0x`
 
-投影`text-shadow: x1px x2px x3px #0x0x0x`
+  - `x1`阴影向左或右延伸距离(左+右-)
 
--  `x1`阴影向左或右延伸距离(左+右-)
+  - `x2`阴影向上或下延伸距离
 
--  `x2`阴影向上或下延伸距离
+  - `x3`可选，模糊程度
 
--  `x3`可选，模糊程度
+  - `#0x0x0x`投影颜色值
 
--  `#0x0x0x`投影颜色值
+- 首字母和首行文本
 
-首字母和首行文本
+  - `:first-line`
 
-- `:first-line`
+  - `:first-letter`
 
-- `:first-letter`
+- 链接样式
 
-链接样式
+  - `:link`未访问的链接
 
-- `:link`未访问的链接
+  - `:visited`单击过的链接
 
-- `:visited`单击过的链接
+- 响应用户
 
-响应用户
+  - `:hover`悬停
 
-- `:hover`悬停
+  - `:active`进行操作
 
-- `:active`进行操作
+  - `:focus`在元素拥有焦点
 
-- `:focus`在元素拥有焦点
+
+
 
 
 # 盒子
@@ -190,11 +291,20 @@
 - `hidden`隐藏
 - `visible`显示
 
+
+
+
+
 # 列表、表格和表单
 
-列表`list-style`
+列表`list-style: type image position`
 
 项目符号样式`list-style-type`
+
+- `none`
+- `disc`
+- `circle`
+- `square`  
 
 项目图像`list-style-image`
 
@@ -211,6 +321,12 @@
 - `inherit`继承外部表格的规则
 
 
+
+
+
+
+
+
 # 布局
 
 `position`定位
@@ -220,7 +336,23 @@
 - `absoulte`
 - `fixed`
 
+
+
+
+
+
+
 `float`浮动
+
+元素设置浮动之后元素就会脱离正常文本流
+
+- `left`
+- `right`
+- `inherit`跟随父元素的浮动属性
+- `none`
+
+
+
 
 `clear`清除浮动
 
