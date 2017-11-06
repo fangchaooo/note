@@ -612,6 +612,7 @@ $$\vec{a} \cdot \vec{b} = 0$$
 
 
 
+
 注意比较两个式子间$dx$ 与 ${\rm d}x$ 的不同。 
 使用 `\operatorname` 命令也可以达到相同的效果，详见 [定义新的符号 \operatorname](https://www.zybuluo.com/codeep/note/163962#1定义新的符号-operatorname) 。
 
@@ -764,7 +765,7 @@ $$
 在开头将 `matrix` 替换为 `pmatrix` `bmatrix` `Bmatrix` `vmatrix` `Vmatrix` 。
 
 ```latex
-$ \begin{matrix} 1 & 2 \\ 3 & 4 \\ \end{matrix} $
+  $ \begin{matrix} 1 & 2 \\ 3 & 4 \\ \end{matrix} $
 $ \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ \end{pmatrix} $
 $ \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ \end{bmatrix} $
 $ \begin{Bmatrix} 1 & 2 \\ 3 & 4 \\ \end{Bmatrix} $

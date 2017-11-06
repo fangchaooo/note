@@ -9,44 +9,45 @@ tags: [Python, 基础语法]
 
 ## Python 之美
 
-```markdown
+```
 Beautiful is better than ugly.
-
+美优于丑。
 Explicit is better than implicit.
-
-Simple is better than complex.
-
-Complex is better than complicated.
-
-Flat is better than nested.
-
-Sparse is better than dense.
-
+直白优于隐晦。
+Simple is better than complex [1].
+简单优于复杂。
+Complex is better than complicated [2] .
+复杂优于纠结。
+Flat is better than nested. [3]
+扁平优于嵌套。
+Sparse is better than dense [4] .
+稀疏优于稠密。
 Readability counts.
-
+可读性是有重要价值的。
 Special cases aren't special enough to break the rules.
-
+特例可以有，但不能特例到打破规则。
 Although practicality beats purity.
-
+尽管在纯粹性和实用性之间倾向的是实用性。
 Errors should never pass silently.
-
+出错决不应该无声无息地忽略。
 Unless explicitly silenced.
-
+除非明确地说明了是无声无息的。
 In the face of ambiguity, refuse the temptation to guess.
-
-There should be one-- and preferably only one --obvious way to do it.
-
-Although that way may not be obvious at first unless you're Dutch.
-
-Now is better than never.
-
-Although never is often better than *right* now.
-
+面对二义性情况时，要拒绝任何猜的诱惑。
+There should be one -- and preferably only one -- obvious way to do it.
+一件事应该一种做法 —— 并且宁愿只有一种做法 —— 一种显而易见的做法。
+Although that way may not be obvious at first unless you're Dutch [5].
+尽管在刚开始的时候这个做法可能不是那么显而易见，毕竟你不是荷兰人。
+Now is better than never [6].
+『现在』 优于 『决不』。
+Although never is often better than right now [7].
+尽管 『决不』 常常优于 『马上』。
 If the implementation is hard to explain, it's a bad idea.
-
+如果一个实现难于解释清楚，那它是个差的想法。
 If the implementation is easy to explain, it may be a good idea.
-
-Namespaces are one honking great idea -- let's do more of those!
+如果一个实现很容易解释清楚，那它可能是个好的想法。
+NameSpaces are one honking great idea -- let's do more of those!
+命名空间是个值得大力宣扬的想法 — 放手多多用起来吧！
 ```
 
 
