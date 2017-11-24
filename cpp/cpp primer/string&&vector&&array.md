@@ -147,3 +147,88 @@ a2 = a;       //error
 ```
 
 理解复杂的数组声明
+
+```c++
+int *ptrs[10];   //ptrs是含有10个int型指针的数组
+int &refs[10] = ...; //错误，不存在引用的数组
+int (*parray)[10] = &arr; //parray 指向一个含有10个整数的数组
+int (&arrRef)[10] = arr;  //arrRef引用一个含有10个整数的数组
+```
+
+访问数组元素
+
+使用数组下标时，通常将其定义为size_t类型。size_t是一种机器相关的无符号类型，它被设计得足够大以便能表示内存中任意对象的大小。
+
+## 指针和数组
+
+```c++
+int ia[] = {0,1,2,3,4,5,6,7,8,9};
+int *beg = begin(ia);    //指向ia首元素的指针
+int *last = end(ia);     //指向ia尾元素的下一位置的指针
+```
+
+## C风格字符串
+
+```c++
+strlen(p)   //返回p的长度，空字符不计算在内
+strcmp(p1, p2)  //比较p1与p2相等性。如果p1==p1则返回0；如果p1>p2返回正值，反正为负值
+strcat(p1, p2)  //将p2添加到p1后，返回p1
+strcpy(p1, p2)  //将p2拷贝给p1，返回p1
+```
+
+## 与旧代码的接口
+
+1. 允许使用以空字符结束的字符数组来初始化string对象或为string对象负值
+2. 在string对象的加法运算中允许使用以空字符结束的字符数组作为其中一个运算对象（不能两个运算对象都是）；在string对象的复合赋值运算中允许使用以空字符结束的字符数组作为右侧的运算对象。
+
+使用数组来初始化vector对象
+
+```c++
+int int_arr = {0,1,2,3,4,5};
+vector<int> ivec(begin(int_arr), end(int_arr))  //完整的将int_arr赋值给ivec
+vector<int> subVec(int_arr+1, int_arr+4)  //int_arr[1],int_arr[2],int_arr[3]
+```
+
+## 多维数组----数组的数组
+
+使用范围for来处理多维数组
+
+```c++
+size_t = 0;
+for(auto &row : ia)
+  for(auto &col :row){
+      col = cnt;
+      ++cnt;
+  }
+```
+
+指针和多维数组
+
+```c++
+int ia[3][4];
+int (*p)[4] = ia; //p指向含有4个整数的数组
+int *p[4] ;       //整形指针的数组
+p = &ia[2];       //p指向ia的尾元素
+```
+
+**c++11中使用auto、decltype**来避免使用指针
+
+```c++
+for(auto p = ia; p != ia+3; ++p) //using p = (*ia)[4]
+  for(auto q = *p; q!= *p+4; ++q)
+    cout<<*q<<" "l
+  cout<<endl;
+
+//using begin end
+for(auto p = begin(ia); p != end(ia); ++p)
+  for(q = begin(*p); q != end(*p); ++q)
+    cout<<*q<<" ";
+cout<<endl;
+```
+
+使用类型别名简化多维数组指针
+
+using int_array = int[4]
+
+typedef int int_array[4]
+
